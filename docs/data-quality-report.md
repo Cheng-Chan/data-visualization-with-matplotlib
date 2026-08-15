@@ -29,7 +29,6 @@ Path: `student-performance/dataset/student_performance.csv`
 | Property | Result |
 |---|---|
 | Shape | 10 rows × 7 columns |
-| SHA-256 | `414fd7aebb628a51076bf630c9d6438b274c74011b095e115bc7151625beff0c` |
 | Missing values | None |
 | Duplicate rows | None |
 | Duplicate students | None |
@@ -69,7 +68,6 @@ Path: `nba-players/dataset/nba_dataset.csv`
 | Property | Result |
 |---|---|
 | Shape | 457 rows × 10 columns |
-| SHA-256 | `21e004ac05408080888c37f2b716539ef15d127233e086f5e6bdf5905e012d79` |
 | Current missing values | None |
 | Duplicate rows | None |
 | Duplicate names | None |
@@ -173,5 +171,5 @@ The required exercises will not silently remove these rows. A sensitivity compar
 - Never overwrite either source CSV.
 - Never create duplicate cleaned CSVs merely to satisfy the exercise filenames.
 - Do not use unapproved global `dropna()`, `fillna()`, or `drop_duplicates()` operations.
-- Verify both source hashes during final validation.
+- Verify that both source CSV files remain unchanged during final validation.
 - Save charts separately from the source datasets.

@@ -16,7 +16,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from common.data_loading import load_dataset, sha256  # noqa: E402
+from common.data_loading import load_dataset  # noqa: E402
 
 
 EXPECTED_COLUMNS = [
@@ -68,7 +68,6 @@ def main() -> None:
 
     print("Student Performance Dataset — Read-Only Audit")
     print(f"Path: {dataset_path}")
-    print(f"SHA-256: {sha256(dataset_path)}")
     print(f"Shape: {raw_df.shape[0]} rows × {raw_df.shape[1]} columns")
     print(f"Columns: {list(raw_df.columns)}")
     print("\nFirst five rows:")

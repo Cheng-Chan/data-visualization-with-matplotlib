@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -35,9 +34,3 @@ def load_dataset(
         )
 
     return dataset_path, dataframe
-
-
-def sha256(path: Path) -> str:
-    """Return the SHA-256 hash of a file without changing it."""
-
-    return hashlib.sha256(path.read_bytes()).hexdigest()
