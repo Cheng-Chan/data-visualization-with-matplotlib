@@ -53,7 +53,10 @@ def main() -> None:
     print(f"Teams plotted: {len(team_salary)}")
     print(f"Lowest team mean: {team_salary.index[0]} (${team_salary.iloc[0]:,.0f})")
     print(f"Highest team mean: {team_salary.index[-1]} (${team_salary.iloc[-1]:,.0f})")
-    print("Interpretation must account for star-player salaries, roster sizes, and apparent imputation.")
+    print(
+        "Interpretation must account for star-player salaries, roster sizes, "
+        "and apparent imputation."
+    )
 
 
 if __name__ == "__main__":

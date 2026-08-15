@@ -68,8 +68,14 @@ def main() -> None:
     print(f"Saved chart: {output_path}")
     print(f"Players plotted: {len(first_15)}")
     print("Units: Age=years, Weight=pounds, Height_m=meters")
-    print(f"Weight range in chart: {first_15['Weight'].min():.0f}–{first_15['Weight'].max():.0f} pounds")
-    print(f"Height range in chart: {first_15['Height_m'].min():.2f}–{first_15['Height_m'].max():.2f} meters")
+    print(
+        "Weight range in chart: "
+        f"{first_15['Weight'].min():.0f}–{first_15['Weight'].max():.0f} pounds"
+    )
+    print(
+        "Height range in chart: "
+        f"{first_15['Height_m'].min():.2f}–{first_15['Height_m'].max():.2f} meters"
+    )
 
 
 if __name__ == "__main__":

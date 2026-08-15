@@ -46,7 +46,7 @@ Do not rename, overwrite, or duplicate the source CSV files. Analysis code shoul
 
 ## Output policy
 
-Exercise scripts create their output directory at runtime and save reviewable PNG charts there. Generated outputs are ignored by Git:
+Exercise scripts create their output directory at runtime and save reviewable PNG charts there. Generated outputs are intentionally eligible for Git tracking so the charts can be reviewed from the repository:
 
 ```text
 student-performance/outputs/
@@ -54,6 +54,34 @@ nba-players/outputs/
 ```
 
 Source datasets and explanatory documentation remain tracked.
+
+## Running the audits
+
+Run either audit from the repository root or from another working directory:
+
+```bash
+python student-performance/exercises/00_data_audit.py
+python nba-players/exercises/00_data_audit.py
+```
+
+## Running the exercises
+
+Student Performance exercises:
+
+```bash
+python student-performance/exercises/01_math_scores_bar.py
+python student-performance/exercises/10_mini_dashboard.py
+```
+
+NBA exercises:
+
+```bash
+python nba-players/exercises/01_top_salaries_bar.py
+python nba-players/exercises/10_mini_dashboard.py
+python nba-players/exercises/11_top_colleges.py
+```
+
+Run the other numbered or bonus scripts in the same way. Each script saves its PNG output under the corresponding `outputs/` directory.
 
 ## Dependencies
 

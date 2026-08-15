@@ -55,7 +55,10 @@ def validate_nba_data(df: pd.DataFrame) -> dict[str, bool]:
         "Team is non-null": df["Team"].notna().all(),
         "Position uses approved categories": df["Position"].isin(APPROVED_POSITIONS).all(),
         "Age is realistic": df["Age"].between(18, 60).all(),
-        "Height matches feet-inch format": df["Height"].astype("string").str.fullmatch(HEIGHT_PATTERN).all(),
+        "Height matches feet-inch format": df["Height"]
+        .astype("string")
+        .str.fullmatch(HEIGHT_PATTERN)
+        .all(),
         "Weight is positive and realistic": df["Weight"].between(100, 400).all(),
         "Salary is positive": df["Salary"].gt(0).all(),
         "Height_m is realistic": df["Height_m"].between(1.5, 2.5).all(),
@@ -137,12 +140,23 @@ def main() -> None:
         print(f"- {'PASS' if passed else 'FAIL'}: {description}")
 
     all_checks_passed = all(checks.values())
-    print("\nCurrent missing values: none" if raw_df.isna().sum().sum() == 0 else "\nCurrent missing values: present")
+    print(
+        "\nCurrent missing values: none"
+        if raw_df.isna().sum().sum() == 0
+        else "\nCurrent missing values: present"
+    )
     print("Previously unavailable colleges: represented by Unknown")
     print("Previously unavailable salaries: apparently median-imputed")
-    print("New destructive cleaning required: no" if all_checks_passed else "New destructive cleaning required: review")
+    print(
+        "New destructive cleaning required: no"
+        if all_checks_passed
+        else "New destructive cleaning required: review"
+    )
     print("Analysis-specific preparation required: yes")
-    print("Note: repeated median salaries are evidence consistent with prior imputation, not proof of provenance.")
+    print(
+        "Note: repeated median salaries are evidence consistent with prior "
+        "imputation, not proof of provenance."
+    )
 
 
 if __name__ == "__main__":
