@@ -4,7 +4,7 @@ This repository contains guided Pandas and Matplotlib exercises using the Studen
 
 ## Project status
 
-The source datasets have been audited and are preserved unchanged. Exercise scripts will be added incrementally, one approved phase at a time.
+The source datasets have been audited and are preserved unchanged. The complete exercise scripts, bonus analyses, generated chart outputs, and two guided notebooks are included.
 
 ## Setup
 
@@ -29,6 +29,12 @@ Verify the environment with:
 ```bash
 python --version
 python -m pip --version
+```
+
+Launch Jupyter Notebook from the repository root with:
+
+```bash
+python -m jupyter notebook
 ```
 
 In VS Code, select the interpreter at `.venv/bin/python` (macOS/Linux) or `.venv\Scripts\python.exe` (Windows) using **Python: Select Interpreter**.
@@ -83,13 +89,23 @@ python nba-players/exercises/11_top_colleges.py
 
 Run the other numbered or bonus scripts in the same way. Each script saves its PNG output under the corresponding `outputs/` directory.
 
+## Guided notebooks
+
+The notebooks are complete companion workbooks for the two datasets. They load the same source CSV files and run Exercises 1–10 plus both bonus activities; the numbered Python scripts remain the canonical implementations.
+
+- [Student Performance guided notebook](student-performance/notebooks/student_performance_guided.ipynb)
+- [NBA Players guided notebook](nba-players/notebooks/nba_players_guided.ipynb)
+
+Run Jupyter from the repository root so the notebooks can locate the shared loader and dataset paths.
+
 ## Dependencies
 
 Direct dependencies are pinned in [requirements.txt](requirements.txt):
 
 - Pandas for DataFrames, validation, aggregation, and preparation.
 - Matplotlib for chart creation and saving.
+- Jupyter for interactive notebook walkthroughs.
 
 ## Learning workflow
 
-The canonical implementations will be Python scripts. Each exercise will document its analytical question, data preparation, visualization choices, execution result, interpretation, critique, and limitations.
+The canonical implementations are Python scripts. The notebooks provide an interactive introduction to the same workflow, while each exercise documents its analytical question, data preparation, visualization choices, execution result, interpretation, critique, and limitations.
